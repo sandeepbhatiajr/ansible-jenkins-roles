@@ -1,0 +1,31 @@
+---
+- hosts: localhost
+  become: true
+  connection: local
+  vars:
+    jenkins_hostname: localhost
+    jenkins_admin_username: admin
+    jenkins_admin_password: admin
+    jenkins_jar_location: /opt/jenkins-cli.jar
+    java_packages:
+      - openjdk-8-jdk
+    jenkins_plugins_install_dependencies: true
+    jenkins_plugins_state: latest
+    jenkins_plugins:
+      - blueocean
+      - git
+      - maven-plugin
+      - credentials
+      - credentials-binding
+      - workflow-aggregator
+      - docker-plugin
+      - strict-crumb-issuer
+      - ws-cleanup
+      - config-file-provider
+      - docker-build-publish
+      - docker-workflow
+      - ansible
+
+  roles:
+    - role: geerlingguy.java
+    - role: geerlingguy.jenkins
