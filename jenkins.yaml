@@ -27,5 +27,5 @@
       - ansible
 
   roles:
-    - role: geerlingguy.java
-    - role: geerlingguy.jenkins
+    - role: geerlingguy.java # https://github.com/geerlingguy/ansible-role-java
+    - role: geerlingguy.jenkins # https://github.com/geerlingguy/ansible-role-jenkins
